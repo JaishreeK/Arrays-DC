@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arrays-DS", "Arrays-DS\Arrays-DS.csproj", "{959870CB-77B9-433A-84BB-2F148794138E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArraysDSTest", "ArraysDSTest\ArraysDSTest.csproj", "{CA4C0337-0916-46B9-9A39-CF84E19F5032}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{959870CB-77B9-433A-84BB-2F148794138E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{959870CB-77B9-433A-84BB-2F148794138E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{959870CB-77B9-433A-84BB-2F148794138E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA4C0337-0916-46B9-9A39-CF84E19F5032}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA4C0337-0916-46B9-9A39-CF84E19F5032}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA4C0337-0916-46B9-9A39-CF84E19F5032}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA4C0337-0916-46B9-9A39-CF84E19F5032}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
