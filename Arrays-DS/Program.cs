@@ -73,5 +73,32 @@ namespace Arrays_DS
             return max;
         }
 
+        //        5 4
+        //1 2 3 4 5
+        //sample output:5 1 2 3 4
+
+        // Complete the rotLeft function below.
+        public static int[] rotLeft(int[] a, int d)
+        {
+            int n = a.Length;
+            int rotations = n - d;
+            //implement array element rotation by d times
+            for(int i=1;i<=rotations;i++)
+            {
+                int[] transformed = new int[n];
+                for (int j=0;j<n;j++)
+                {
+                    if (j + 1 >= n)
+                        transformed[0] = a[j];
+                    else
+                        transformed[j + 1] = a[j];
+                }
+                a = transformed;
+            }
+            return a;
+
+        }
+
+
     }
 }
