@@ -80,24 +80,77 @@ namespace Arrays_DS
         // Complete the rotLeft function below.
         public static int[] rotLeft(int[] a, int d)
         {
+            //int n = a.Length;
+            //int rotations = n - d;
+            ////implement array element rotation by d times
+            //for(int i=1;i<=rotations;i++)
+            //{
+            //    int[] transformed = new int[n];
+            //    for (int j=0;j<n;j++)
+            //    {
+            //        if (j + 1 >= n)
+            //            transformed[0] = a[j];
+            //        else
+            //            transformed[j + 1] = a[j];
+            //    }
+            //    a = transformed;
+            //}
+            //return a;
+
             int n = a.Length;
-            int rotations = n - d;
+            int[]  transformed = new int[n];
+           
             //implement array element rotation by d times
-            for(int i=1;i<=rotations;i++)
+            for (int i = 0; i < n; i++)
             {
-                int[] transformed = new int[n];
-                for (int j=0;j<n;j++)
-                {
-                    if (j + 1 >= n)
-                        transformed[0] = a[j];
-                    else
-                        transformed[j + 1] = a[j];
-                }
-                a = transformed;
+                int newLocation = (i + (n - d)) % n;
+                transformed[newLocation] = a[i];
             }
-            return a;
+            return transformed;
+        }
+
+//        Sample Input
+
+//2
+//5
+//2 1 5 3 4
+//5
+//2 5 1 3 4
+//Sample Output
+
+//3
+//Too chaotic
+
+        // Complete the minimumBribes function below.
+        public static void minimumBribes(int[] q)
+        {
+            int n,nBribes=0;
+            n = q.Length;
+                      
+            //no person can make more than 2 bribes, if found, return "Too chaotic"
+            for(int i=0;i<n;i++)
+            {
+                int jump = q[i] - (i + 1);
+                if (jump > 0)
+                    if (jump > 2)
+                    {
+                        nBribes = 0;
+                        break;
+                    }
+                for (int j = Math.Max(0, q[i] - 2); j < i; j++)
+                    if (q[j] > q[i])
+                        nBribes++;
+            }
+
+           
+            if (nBribes > 0)
+                Console.WriteLine(nBribes);
+            else
+                Console.WriteLine("Too chaotic");
+
 
         }
+
 
 
     }

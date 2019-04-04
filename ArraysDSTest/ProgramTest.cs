@@ -27,13 +27,21 @@ namespace Arrays_DS.Tests
         //    Assert.AreEqual(max, 19);
         //}
 
+        //[TestMethod()]
+        //public void rotLeftTest()
+        //{ //        5 4
+        //  //1 2 3 4 5
+        //  //sample output:5 1 2 3 4
+        //    var trans = Program.rotLeft(new int[] { 1, 2, 3, 4, 5 }, 4);
+        //    Assert.AreEqual(trans, new int[] { 5, 1, 2, 3, 4 });
+        //}
+
         [TestMethod()]
-        public void rotLeftTest()
-        { //        5 4
-          //1 2 3 4 5
-          //sample output:5 1 2 3 4
-            var trans = Program.rotLeft(new int[] { 1, 2, 3, 4, 5 }, 4);
-            Assert.AreEqual(trans, new int[] { 5, 1, 2, 3, 4 });
+        public void minimumBribesTest()
+        {
+            //Program.minimumBribes(new int[] { 2 ,1, 5, 3, 4 });
+            Program.minimumBribes(new int[] { 1, 2, 5, 3, 7, 8, 6, 4 }); 
+
         }
 
         //[TestMethod()]
