@@ -36,12 +36,29 @@ namespace Arrays_DS.Tests
         //    Assert.AreEqual(trans, new int[] { 5, 1, 2, 3, 4 });
         //}
 
-        [TestMethod()]
-        public void minimumBribesTest()
-        {
-            //Program.minimumBribes(new int[] { 2 ,1, 5, 3, 4 });
-            Program.minimumBribes(new int[] { 1, 2, 5, 3, 7, 8, 6, 4 }); 
+        //[TestMethod()]
+        //public void minimumBribesTest()
+        //{
+        //    //Program.minimumBribes(new int[] { 2 ,1, 5, 3, 4 });
+        //    Program.minimumBribes(new int[] { 1, 2, 5, 3, 7, 8, 6, 4 });
 
+        //}
+
+        //[TestMethod()]
+        //public void arrayManipulationTest()
+        //{
+        //    Program.arrayManipulation(10, new int[3, 3] { { 1, 5, 3 }, { 4, 8, 7 }, { 6, 9, 1 } });
+
+        //}
+
+        //        6 4
+        //give me one grand today night
+        //give one grand today
+
+        [TestMethod()]
+        public void checkMagazineTest()
+        {
+            Program.checkMagazine(new string[6] { "give", "me", "one", "grand", "today", "night" }, new string[4] { "give", "one", "grand", "today" });
         }
 
         //[TestMethod()]
@@ -52,7 +69,7 @@ namespace Arrays_DS.Tests
         //    var trans = Program.rotLeft(new int[] { 33,47, 70, 37, 8,53, 13, 93, 71, 72, 51, 100, 60, 87, 97 },13);
         //   // Assert.AreEqual(trans, new int[] { 5, 1, 2, 3, 4 });
         //}
-    }
+        }
 }
 
 

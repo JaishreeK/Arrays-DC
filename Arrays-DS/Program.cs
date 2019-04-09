@@ -140,18 +140,129 @@ namespace Arrays_DS
                 for (int j = Math.Max(0, q[i] - 2); j < i; j++)
                     if (q[j] > q[i])
                         nBribes++;
-            }
-
-           
+            }           
             if (nBribes > 0)
                 Console.WriteLine(nBribes);
             else
                 Console.WriteLine("Too chaotic");
-
-
         }
 
+        // Complete the minimumSwaps function below.
+        public static int minimumSwaps(int[] arr)
+        {
+            ////[7, 1, 3, 2, 4, 5, 6]
+            //int n = arr.Length;
+            //int nSwaps = 0;
+            //for(int i=0;i<n;i++)
+            //{
+            //    int j = i + 1;
+            //    int midIndex = (int)Math.Floor((decimal)(n / 2));
+                
+            //    if (arr[midIndex] > arr[midIndex + 1])
+            //    {
+            //        //Swap
+            //        int temp;
+            //        temp = arr[midIndex];
+            //        arr[midIndex+1] = arr[midIndex];
+            //        arr[midIndex] = temp;
+            //        nSwaps++;
+            //    }             
 
+            //}
+
+            int first = 0, last = arr.Length - 1;
+            int swaps = 0;
+            while (first < last)
+            {
+                while (arr[first] == first + 1 && first < last)
+                    first++;
+                if (first < last)
+                {
+                    int temp = arr[arr[first] - 1];
+                    arr[arr[first] - 1] = arr[first];
+                    arr[first] = temp;
+                    swaps++;
+                }
+            }
+            return swaps;
+        }
+
+        //n=10
+        //a b k
+        //1 5 3
+        //4 8 7
+        //6 9 1
+
+        // Complete the arrayManipulation function below.
+        public static long arrayManipulation(int n, int[,] queries)
+        {
+            int[] arr = new int[n+1];
+            //initialise the array with 0s;
+            Array.Clear(arr, 1, n);
+            for (int i = 0; i < queries.GetLength(0);i++)
+            {
+                //get the indices
+                int left = queries[i, 0];
+                int right = queries[i, 1];
+                int k = queries[i, 2];
+                arr[left] += k;
+                if (right + 1 <= n) arr[right + 1] -= k;
+                //for(int j=left;j<=right;j++)
+                //{
+                //    arr[j] = arr[j] + k;
+                //}
+            }
+
+            long tempMax = 0;
+            long max = 0;
+            for (int i = 1; i <= n; i++)
+            {
+                tempMax += arr[i];
+                if (tempMax > max) max = tempMax;
+            }
+            return max;
+        }
+
+        //        6 4
+        //give me one grand today night
+        //give one grand today
+
+        // Complete the checkMagazine function below.
+        public static void checkMagazine(string[] magazine, string[] note)
+        {
+            int m = magazine.Length;
+            int n = note.Length;
+            string answer = "Yes";
+            //use of dictionaries
+            Dictionary<string,int> magazineDict = new Dictionary<string,int>();
+            foreach (var word in magazine)
+            {
+                if (magazineDict.ContainsKey(word))
+                    magazineDict[word] += 1;
+                else
+                    magazineDict.Add(word, 1);
+
+            }                  
+            //check
+            foreach (string item in note)
+            {
+                if (!magazineDict.ContainsKey(item))
+                {
+                    answer = "No";
+                    break;
+                }
+                else
+                {
+                    //consume the value by getting the key
+                    magazineDict[item] -= 1;
+                    if(magazineDict[item]==0)
+                        magazineDict.Remove(item);
+                }
+            }
+
+            Console.WriteLine(answer);
+
+        }
 
     }
 }
