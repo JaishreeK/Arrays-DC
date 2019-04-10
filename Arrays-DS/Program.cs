@@ -264,5 +264,37 @@ namespace Arrays_DS
 
         }
 
+//        2
+//hello
+//world
+//hi
+//world
+
+        //, . The substrings  and  are common to both strings.
+        // Complete the twoStrings function below.
+        public static string twoStrings(string s1, string s2)
+        {
+            var returnStr = "NO";
+            //char[] s1Chars = new char[s1.Length];
+            Dictionary<char, int> s1CharDict = new Dictionary<char, int>();
+            foreach (var char1 in s1)
+            {
+                if (s1CharDict.ContainsKey(char1))
+                    s1CharDict[char1] += 1;
+                else
+                    s1CharDict.Add(char1, 1);
+                
+            }
+            foreach (var char2 in s2)
+            {
+                if (s1CharDict.ContainsKey(char2))
+                {
+                    returnStr = "YES";
+                    break;
+                }
+            }
+            return returnStr;
+        }
+
     }
 }
