@@ -274,8 +274,7 @@ namespace Arrays_DS
         // Complete the twoStrings function below.
         public static string twoStrings(string s1, string s2)
         {
-            var returnStr = "NO";
-            //char[] s1Chars = new char[s1.Length];
+            var returnStr = "NO";    
             Dictionary<char, int> s1CharDict = new Dictionary<char, int>();
             foreach (var char1 in s1)
             {
@@ -296,5 +295,54 @@ namespace Arrays_DS
             return returnStr;
         }
 
+//        1
+//cdcd
+        // Complete the sherlockAndAnagrams function below.
+        public static int sherlockAndAnagrams(string s)
+        {
+            int AnagramCount = 0;
+            char[] sChar = s.ToCharArray();           
+            // TODO: similarly we have to do for 2,3..until n-1 characters where n is the length of the string
+            for (int k = 0; k < sChar.Length - 1; k++)
+            {
+                string temp="";
+                for (int p = 0; p <=k; p++)
+                {
+                    temp = temp + sChar[p];
+                }
+                for (int i = k+1; i < sChar.Length; i++)
+                {
+                    string temp2 = "";                   
+                    for (int p1 =i; p1<=k+i; p1++)
+                    {
+                        if (p1 >= sChar.Length)
+                            break;
+                        temp2 = temp2 + sChar[p1];                        
+                    }
+                    if (Check_Anagram(temp,temp2))                                       
+                        AnagramCount++;
+                    
+                }            
+                
+            }           
+            return AnagramCount;
+        }
+
+        public static bool Check_Anagram(string temp, string temp2)
+        {
+            var tempChars = temp.ToCharArray();
+            var temp2Chars = temp2.ToCharArray();
+
+            Array.Sort(tempChars);
+            Array.Sort(temp2Chars);
+
+            string resultTemp = new string(tempChars);
+            string resultTemp2 = new string(temp2Chars);
+
+            if (resultTemp == resultTemp2)
+                return true;
+            else
+                return false;
+        }
     }
 }

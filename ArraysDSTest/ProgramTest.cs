@@ -55,11 +55,26 @@ namespace Arrays_DS.Tests
         //give me one grand today night
         //give one grand today
 
+        //[TestMethod()]
+        //public void checkMagazineTest()
+        //{
+        //    Program.checkMagazine(new string[6] { "give", "me", "one", "grand", "today", "night" }, new string[4] { "give", "one", "grand", "today" });
+        //}
+
         [TestMethod()]
-        public void checkMagazineTest()
-        {
-            Program.checkMagazine(new string[6] { "give", "me", "one", "grand", "today", "night" }, new string[4] { "give", "one", "grand", "today" });
+        public void sherlockAndAnagramsTest()
+        {            
+            //Program.sherlockAndAnagrams("abba");
+            int result = Program.sherlockAndAnagrams("cdcd");
+            Assert.AreEqual(result, 5);
         }
+
+        //[TestMethod()]
+        //public void Check_AnagramTest()
+        //{
+        //    bool result = Program.Check_Anagram("ab", "ba");
+        //    Assert.AreEqual(result, true);
+        //}
 
         //[TestMethod()]
         //public void rotLeftTest()
@@ -69,7 +84,7 @@ namespace Arrays_DS.Tests
         //    var trans = Program.rotLeft(new int[] { 33,47, 70, 37, 8,53, 13, 93, 71, 72, 51, 100, 60, 87, 97 },13);
         //   // Assert.AreEqual(trans, new int[] { 5, 1, 2, 3, 4 });
         //}
-        }
+    }
 }
 
 
