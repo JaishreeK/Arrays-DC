@@ -301,31 +301,39 @@ namespace Arrays_DS
         public static int sherlockAndAnagrams(string s)
         {
             int AnagramCount = 0;
-            char[] sChar = s.ToCharArray();           
+            int strLength = s.Length;
+            string temp2 = "";
+            string temp = "";
             // TODO: similarly we have to do for 2,3..until n-1 characters where n is the length of the string
-            for (int k = 0; k < sChar.Length - 1; k++)
+            for (int cnt = 1; cnt < strLength; cnt++)
             {
-                string temp="";
-                for (int p = 0; p <=k; p++)
-                {
-                    temp = temp + sChar[p];
-                }
-                for (int i = k+1; i < sChar.Length; i++)
-                {
-                    string temp2 = "";                   
-                    for (int p1 =i; p1<=k+i; p1++)
+                for (int k = 0; k < strLength; k++)
+                {                   
+                    if (strLength - k >= cnt)
                     {
-                        if (p1 >= sChar.Length)
-                            break;
-                        temp2 = temp2 + sChar[p1];                        
+                        temp = s.Substring(k, cnt);
+                        for (int i = k + 1; i < strLength; i++)
+                        {                            
+                            if (strLength - i >= cnt)
+                            {
+                                temp2 = s.Substring(i, cnt);
+                                if (Check_Anagram(temp, temp2))
+                                    AnagramCount++;
+                            }
+                            else
+                                break;
+                        }
                     }
-                    if (Check_Anagram(temp,temp2))                                       
-                        AnagramCount++;
-                    
-                }            
-                
-            }           
+                    else
+                        break;
+                }
+            }
             return AnagramCount;
+        }
+
+        public static string GetKElements(string s, int k)
+        {
+            return s.Substring(0, k);
         }
 
         public static bool Check_Anagram(string temp, string temp2)

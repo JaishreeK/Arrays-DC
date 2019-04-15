@@ -63,11 +63,20 @@ namespace Arrays_DS.Tests
 
         [TestMethod()]
         public void sherlockAndAnagramsTest()
-        {            
+        {
             //Program.sherlockAndAnagrams("abba");
             int result = Program.sherlockAndAnagrams("cdcd");
             Assert.AreEqual(result, 5);
         }
+
+        //[TestMethod()]
+        //public void GetKElementsTest()
+        //{
+        //    string temp = Program.GetKElements("cdcd", 1);
+        //    string temp1 = Program.GetKElements("cdcd", 2);
+        //    string temp2 = Program.GetKElements("cdcd", 3);
+
+        //}
 
         //[TestMethod()]
         //public void Check_AnagramTest()
