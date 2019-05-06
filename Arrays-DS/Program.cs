@@ -270,87 +270,8 @@ namespace Arrays_DS
 //hi
 //world
 
-        //, . The substrings  and  are common to both strings.
-        // Complete the twoStrings function below.
-        public static string twoStrings(string s1, string s2)
-        {
-            var returnStr = "NO";    
-            Dictionary<char, int> s1CharDict = new Dictionary<char, int>();
-            foreach (var char1 in s1)
-            {
-                if (s1CharDict.ContainsKey(char1))
-                    s1CharDict[char1] += 1;
-                else
-                    s1CharDict.Add(char1, 1);
-                
-            }
-            foreach (var char2 in s2)
-            {
-                if (s1CharDict.ContainsKey(char2))
-                {
-                    returnStr = "YES";
-                    break;
-                }
-            }
-            return returnStr;
-        }
+       
 
-//        1
-//cdcd
-        // Complete the sherlockAndAnagrams function below.
-        public static int sherlockAndAnagrams(string s)
-        {
-            int AnagramCount = 0;
-            int strLength = s.Length;
-            string temp2 = "";
-            string temp = "";
-            // TODO: similarly we have to do for 2,3..until n-1 characters where n is the length of the string
-            for (int cnt = 1; cnt < strLength; cnt++)
-            {
-                for (int k = 0; k < strLength; k++)
-                {                   
-                    if (strLength - k >= cnt)
-                    {
-                        temp = s.Substring(k, cnt);
-                        for (int i = k + 1; i < strLength; i++)
-                        {                            
-                            if (strLength - i >= cnt)
-                            {
-                                temp2 = s.Substring(i, cnt);
-                                if (Check_Anagram(temp, temp2))
-                                    AnagramCount++;
-                            }
-                            else
-                                break;
-                        }
-                    }
-                    else
-                        break;
-                }
-            }
-            return AnagramCount;
-        }
 
-        public static string GetKElements(string s, int k)
-        {
-            return s.Substring(0, k);
-        }
-
-        public static bool Check_Anagram(string temp, string temp2)
-        {
-            var tempChars = temp.ToCharArray();
-            var temp2Chars = temp2.ToCharArray();
-
-            Array.Sort(tempChars);
-            Array.Sort(temp2Chars);
-
-            string resultTemp = new string(tempChars);
-            string resultTemp2 = new string(temp2Chars);
-
-            if (resultTemp == resultTemp2)
-                return true;
-            else
-                return false;
-        }
     }
 }

@@ -61,29 +61,21 @@ namespace Arrays_DS.Tests
         //    Program.checkMagazine(new string[6] { "give", "me", "one", "grand", "today", "night" }, new string[4] { "give", "one", "grand", "today" });
         //}
 
+        //[TestMethod()]
+        //public void sherlockAndAnagramsTest()
+        //{
+        //    //Program.sherlockAndAnagrams("abba");
+        //    //int result = Program.sherlockAndAnagrams("cdcd");
+        //    int result = Program.sherlockAndAnagrams("ifailuhkqqhucpoltgtyovarjsnrbfpvmupwjjjfiwwhrlkpekxxnebfrwibylcvkfealgonjkzwlyfhhkefuvgndgdnbelgruel");
+        //    Assert.AreEqual(result, 399);
+        //}
+
         [TestMethod()]
-        public void sherlockAndAnagramsTest()
+        public void Check_AnagramTest()
         {
-            //Program.sherlockAndAnagrams("abba");
-            int result = Program.sherlockAndAnagrams("cdcd");
-            Assert.AreEqual(result, 5);
+            bool result = Program.Check_Anagram("ab", "bc");
+            Assert.AreEqual(result, true);
         }
-
-        //[TestMethod()]
-        //public void GetKElementsTest()
-        //{
-        //    string temp = Program.GetKElements("cdcd", 1);
-        //    string temp1 = Program.GetKElements("cdcd", 2);
-        //    string temp2 = Program.GetKElements("cdcd", 3);
-
-        //}
-
-        //[TestMethod()]
-        //public void Check_AnagramTest()
-        //{
-        //    bool result = Program.Check_Anagram("ab", "ba");
-        //    Assert.AreEqual(result, true);
-        //}
 
         //[TestMethod()]
         //public void rotLeftTest()
